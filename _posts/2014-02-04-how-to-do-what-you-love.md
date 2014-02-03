@@ -2,8 +2,7 @@
 layout: post
 title: 如何才能去做喜欢的事
 ---
-{{ page.title }}
-================
+#如何才能去做喜欢的事
 
 ####*by Paul Graham*
 
