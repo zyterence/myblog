@@ -1,3 +1,7 @@
+---
+layout: post
+title: The Little Redis Book
+---
 
 ![The Little Redis Book cn, By Karl Seguin, Translate By Jason Lai](http://pic.yupoo.com/zhangyangy/DvPZkdW2/uNGTm.png)
 
