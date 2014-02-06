@@ -19,6 +19,48 @@ body {
   text-align: center;
 }
 
+div.go-top {
+    background-color: #FAFAFA;
+    border: 1px solid #0088CC;
+    border-radius: 3px;
+    bottom: 113px;
+    cursor: pointer;
+    height: 38px;
+    left: 90%;
+    margin-left: 40px;
+    opacity: 0.9;
+    position: fixed;
+    width: 38px;
+    z-index: 999999;
+}
+div.arrow {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #0088CC;
+    border-image: none;
+    border-style: solid;
+    border-width: 9px;
+    height: 0;
+    left: 10px;
+    position: absolute;
+    top: -1px;
+    width: 0;
+}
+
+div.stick {
+    background-color: #0088CC;
+    border-radius: 1px;
+    display: block;
+    height: 14px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 8px;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
