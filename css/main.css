@@ -27,6 +27,7 @@ div.go-top {
     cursor: pointer;
     height: 38px;
     left: 90%;
+    display:none;
     margin-left: 40px;
     opacity: 0.9;
     position: fixed;
