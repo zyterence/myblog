@@ -3,7 +3,7 @@ layout: post
 title: 如何才能去做喜欢的事
 ---
 
-####*by Paul Graham*
+#####*by Paul Graham*
 
 
 喜欢一件事才能做好它，这可不是什么新想法，用4个字概括："Do what you love."（“做你喜欢的事”）。然而，知易行难。
