@@ -1,7 +1,6 @@
 ---
 layout: post
-title: Paul Graham:The Disruptor in the Vally    
-撼动硅谷的人
+title: Paul Graham:The Disruptor in the Vally    撼动硅谷的人
 ---
 
 **作者:Christopher Steiner**    
