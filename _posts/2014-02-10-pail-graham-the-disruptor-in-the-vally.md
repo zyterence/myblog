@@ -44,7 +44,11 @@ The accident was a summer program Graham started in 2005 for college students wh
 
 
 这个"偶然"指的是2005年Paul Graham旨在帮助那些有创业念头的大学生的一个暑期项目。他劝说他们不要去大公司当枯燥的实习生，而是在剑桥市创办自己的公司，他们会从他和他的朋友----麻省理工学院计算机教授Robert Morris----那里得到5000美元资助和悉心指导。Paul Graham和Robert Morris曾经一起创办了Viaweb，那是一个帮助人们搭建网上商店的互联网软件，1998年被Yahoo以5000万美元的价格收购。
+
+
 "It was supposed to be a throwaway project for these students," recalls Graham. "By the end of the summer we were like,"'Whoa, we've got something here!'"
+
+
 "那个暑期的校园项目只是一次性的安排，并没有长远打算，"Paul Graham回忆道。"可是等到结束的时候，我们的感受就像是'哇，不可思议，我们找到宝了！'"
 
 
