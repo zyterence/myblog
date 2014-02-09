@@ -224,4 +224,6 @@ After Cohen's group there's a clear dropoff. But more big players are ramping up
 
 除了David Cohen的团队，其他团队离YC的差距目前还比较大。但是，不少大玩家正在酝酿他们自己版本的YC。Groupon创始人之一的Eric Lefkofsky，计划不久后在他的家乡芝加哥有所动作，他的身价高达10亿美元。
 Graham welcomes the competition. "It's better for entrepreneurs," he says. "If we make a mistake and don't fund somebody great, they still have a chance."
+
+
 Paul Graham对竞争表示欢迎。"这对创业者有好处，"他说。"如果我们犯错了，没有资助优秀的人，那么这些人在其他地方还有机会。"
