@@ -1,6 +1,9 @@
-==================================================
-Class-based generic views 基于类的通用视图
-==================================================
+---
+layout: post
+title: Class-based generic views
+---
+
+
 
 .. versionadded:: 1.3
 
