@@ -6,15 +6,12 @@ categories: documentation
 ---
 
 
-.. versionadded:: 1.3
 
-.. note::
     在Django1.3之前，通用视图是以函数的方式来实现的。基于函数的实现已经不
     建议使用，建议使用这里介绍的基于类的实现方式。
-
     要了解更多上面说的通过视图的实现可以查看
-    :doc:`topic guide </topics/generic-views>` 和
-    :doc:`detailed reference </ref/generic-views>`.
+    `topic guide </topics/generic-views>` 和
+    `detailed reference </ref/generic-views>`.
 
 编写Web应用可能是单调的，因为你需要不断的重复某一种模式。Django尝试从model和
 template层移除一些单调的情况，但是Web开发者依然会在view（视图）层经历这种厌烦。
@@ -139,13 +136,13 @@ Generic views of objects 对象的通用视图
 -- 其中的 "books" 部分来自模型(model)所属的app的名字，而 "publisher" 部分仅仅
 是模型名字的小写字母。
 
-.. note::
+
     因此，当（比如说） :class:`django.template.loaders.app_directories.Loader`
     这个模板加载器在添加到 :setting:`TEMPLATE_LOADERS`  中时，这个模板的路径将是::
 
         /path/to/project/books/templates/books/publisher_list.html
 
-.. highlightlang:: html+django
+
 
 这个模板将会依据于一个上下文(context)来渲染，这个context包含一个名为 ``object_list``
 包含所有publisher对象的变量。一个非常简单的模板可能看起来就像下面这个::
@@ -170,7 +167,7 @@ Generic views of objects 对象的通用视图
 Extending generic views 扩展通用视图
 ==============================================
 
-.. highlightlang:: python
+
 
 这是毫无疑问的，使用通用视图可以极大的提高开发速度。然而，在大多数工程中，
 总会遇到这样的时刻，通用视图无法满足需求。的确，大多数来自Django开发新手
@@ -198,7 +195,7 @@ Making "friendly" template contexts 编写"友好的"模板上下文
 ``context_object_name`` 指定上下文(context)变量要使用的名字。在这个例子
 中我们在URLconf中重写了它，因为这只是简单的修改:
 
-.. parsed-literal::
+
 
     urlpatterns = patterns('',
         (r'^publishers/$', ListView.as_view(
@@ -215,13 +212,12 @@ Adding extra context 添加额外的上下文
 ----------------------------------------
 
 经常的你需要提供一些通用视图没有提供的额外的信息。比如，考虑到每个publisher
-详细页面上的图书列表的展示。 :class:`~django.views.generic.detail.DetailView`
+详细页面上的图书列表的展示。 class:`~django.views.generic.detail.DetailView`
 通用视图提供了一个publisher对象给context，但是看起来在模板中没
 有获取附加信息的途径。
 
-然而，是有方法的;你可以子类化 :class:`~django.views.generic.detail.DetailView`
-然后提供你自己的 ``get_context_data`` 方法的实现。 
-:class:`~django.views.generic.detail.DetailView` 中默认的实现只是简单的
+然而，是有方法的;你可以子类化 class:`~django.views.generic.detail.DetailView`
+然后提供你自己的 ``get_context_data`` 方法的实现。class:`~django.views.generic.detail.DetailView` 中默认的实现只是简单的
 给模板添加了要展示的对象，但是你这可以这么重写来展示更多信息::
 
     from django.views.generic import DetailView
@@ -259,7 +255,7 @@ Viewing subsets of objects 查看对象的子集合
 
 指明 ``model = Publisher`` 等价于快速声明的 ``queryset = Publisher.objects.all()``
 。然而，通过使用 ``queryset`` 来定义一个过滤的对象列表，你可以更加详细
-的了解哪些对象将会被显示的视图(view)中(看 :doc:`/topics/db/queries`
+的了解哪些对象将会被显示的视图(view)中(看doc:`/topics/db/queries`
 来获取更多关于 :class:`QuerySet` 对象的更对信息，以及看
 :doc:`class-based views reference </ref/class-based-views>` 来获取全部
 细节)。
@@ -300,7 +296,7 @@ Viewing subsets of objects 查看对象的子集合
 要创建另外一个publisher页面，我们需要添加另外几行代码到URLconf中，并且再多几个
 publisher就会觉得这么做不合理。我们会在下一个章节处理这个问题。
 
-.. note::
+
 
     如果你在访问 ``/books/acme/`` 是出现404错误，检查确保你确实有一个名字为
     'ACME Publishing'的Publisher。通用视图在这种情况下提供一个 ``allow_empty``
@@ -315,8 +311,7 @@ Dynamic filtering 动态过滤
 商的名字硬编码到URLconf中，但是如果我们想要编写一个视图来展示任何publisher的所有
 图书，怎么处理？
 
-很方便， ``ListView`` 有一个 
-:meth:`~django.views.generic.detail.ListView.get_queryset` 方法来供我们重写。
+很方便， ``ListView`` 有一个meth:`~django.views.generic.detail.ListView.get_queryset` 方法来供我们重写。
 在之前，它只是返回一个 ``queryset`` 属性值，但是现在我们可以添加更多的逻辑。
 
 让这种方式能够工作的关键点在于当类视图被调用时，各种有用的对象被存储在 ``self`` 上;
@@ -392,7 +387,7 @@ or after calling the generic view.
 
 首先，我们需要添加author详情页的代码配置到URLconf中，指向自定义的视图。
 
-.. parsed-literal::
+parsed-literal:
 
     from books.views import AuthorDetailView
 
@@ -402,7 +397,7 @@ or after calling the generic view.
     )
 
 然后，编写我们新的视图 -- ``get_object`` 是用来获取对象的方法 -- 因此我们简单的
-重写它并封装调用::
+重写它并封装调用:
 
     import datetime
     from books.models import Author
@@ -422,12 +417,11 @@ or after calling the generic view.
             # Return the object
             return object
 
-.. note::
+
 
     这段代码并不能运行，除非你创建一个 ``books/author_detail.html``
     的模板。
 
-.. note::
 
     这里的URLconf使用参数组的名字 ``pk`` - 这个名字是 ``DetailView`` 用来查找
     用来queryset的主键的值的默认名称。
@@ -442,8 +436,7 @@ More than just HTML 不仅仅是HTML
 通用视图能够做的远不止这些。
 
 每一个通用视图都是由一系列的mixin组成的，而每个mixin给整个视图贡献
-了一小片代码。其中一些mixin -- 比如
-:class:`~django.views.generic.base.TemplateResponseMixin` -- 是为
+了一小片代码。其中一些mixin -- 比如class:`~django.views.generic.base.TemplateResponseMixin` -- 是为
 使用一个模板渲染内容到html特殊设计的。无论如何，你都可以编写自己的
 mixin来完成不同的渲染行为。
 
@@ -472,24 +465,24 @@ mixin来完成不同的渲染行为。
             return json.dumps(context)
 
 这时，你就可以构建一个返回JSON数据的
-:class:`~django.views.generic.detail.DetailView` 通过混合你的
-:class:`JSONResponseMixin` 和
-:class:`~django.views.generic.detail.BaseDetailView` -- (类
-:class:`~django.views.generic.detail.DetailView` 在模板渲染行
+class:`~django.views.generic.detail.DetailView` 通过混合你的
+class:`JSONResponseMixin` 和
+class:`~django.views.generic.detail.BaseDetailView` -- (类
+class:`~django.views.generic.detail.DetailView` 在模板渲染行
 为之前被混入其他行为)::
 
     class JSONDetailView(JSONResponseMixin, BaseDetailView):
         pass
 
-这个视图这次可以像其它任何 :class:`~django.views.generic.detail.DetailView` 
+这个视图这次可以像其它任何 class:`~django.views.generic.detail.DetailView` 
 类一样被部署，用完全相同的行为 -- 除了响应的格式之外。
 
-如果你想要冒险，你甚至可以混入一个 :class:`~django.views.generic.detail.DetailView`
+如果你想要冒险，你甚至可以混入一个class:`~django.views.generic.detail.DetailView`
 的子类，这个子类能够同时返回HTML和JSON内容，依赖于HTTP请求中的一些属性，
 比如一个查询参数或者是一个HTTP头部。仅仅是混合
-:class:`JSONResponseMixin` 和
-:class:`~django.views.generic.detail.SingleObjectTemplateResponseMixin`,
-然后重写方法 :func:`render_to_response()` 依靠用户请求中需要的响应类型
+class:`JSONResponseMixin` 和
+class:`~django.views.generic.detail.SingleObjectTemplateResponseMixin`,
+然后重写方法 func:`render_to_response()` 依靠用户请求中需要的响应类型
 把实现延迟到适当的子类中::
 
     class HybridDetailView(JSONResponseMixin, SingleObjectTemplateResponseMixin, BaseDetailView):
@@ -501,15 +494,13 @@ mixin来完成不同的渲染行为。
                 return SingleObjectTemplateResponseMixin.render_to_response(self, context)
 
 因为Python解析方法重载的方式，局部的 ``render_to_response()`` 实现将会
-覆盖由
-:class:`JSONResponseMixin` 和
-:class:`~django.views.generic.detail.SingleObjectTemplateResponseMixin`.
+覆盖由class:`JSONResponseMixin` 和
+class:`~django.views.generic.detail.SingleObjectTemplateResponseMixin`.
 提供的版本。
 
 Decorating class-based views 装饰类视图
 ========================================================
 
-.. highlightlang:: python
 
 对于类视图的扩展并不局限于使用mixin。你也可以使用装饰器。
 
@@ -532,13 +523,12 @@ Decorating in URLconf URLconf中的装饰器
 这种方法适用于装饰每个实例的基础。如果你想要视图的每个实例都被装饰，
 你需要采用别的方法。
 
-.. _decorating-class-based-views:
 
 Decorating the class 装饰类
 ----------------------------------------
 
 要装饰类视图的每一个实例，你需要装饰类自身的定义。要实现这个目的，你要
-应用这个装饰器到类的 :meth:`~django.views.generic.base.View.dispatch` 
+应用这个装饰器到类的`~django.views.generic.base.View.dispatch` 
 方法上。
 
 类方法和独立的函数并不完全一样，因此你不能仅仅应用函数的装饰器 --
@@ -559,7 +549,7 @@ Decorating the class 装饰类
 
 在这个例子中， ``ProtectedView`` 的每个实例都将拥有登录保护的功能。
 
-.. note::
+
 
     ``method_decorator`` 方法传递 ``*args`` 和 ``**kwargs`` 给这个类上的
     装饰器。如果你的方法不接受兼容参数集合，它会抛出 ``TypeError`` 异常。
