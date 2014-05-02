@@ -50,7 +50,7 @@ Simple usage 简单使用
 当你子类化一个类视图时，你可以重写一些属性（比如 ``template_name`` ）或者
 一些方法（比如 ``get_context_data`` ）在你的子类中来提供一些新的值或者方
 法。考虑一下，比如，一个仅仅需要展示一个模板的视图， ``about.html`` 。
-Django有一个通用视图来完成这个功能 - :class:`~django.view.generic.base.TemplateView`
+Django有一个通用视图来完成这个功能class:`~django.view.generic.base.TemplateView`
 - 因此你可以子类化它，然后重写模板的名称::
 
     # some_app/views.py
@@ -87,7 +87,7 @@ Django有一个通用视图来完成这个功能 - :class:`~django.view.generic.
 Generic views of objects 对象的通用视图
 ================================================
 
-:class:`~django.views.generic.base.TemplateView` 确实很有用，但是当你需要
+class:`~django.views.generic.base.TemplateView` 确实很有用，但是当你需要
 呈现你数据库中的内容时Django的通用视图才真的会脱颖而出。因为这是如此常见
 的任务，Django提供了一大把内置的通用视图，使生成对象的展示列表和详细视图
 的变得极其容易。
