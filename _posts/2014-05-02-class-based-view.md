@@ -1,8 +1,9 @@
 ---
 layout: post
-title: Class-based generic views
+title:  "Class based view"
+date:   2014-05-02
+categories: documentation
 ---
-
 
 
 .. versionadded:: 1.3
